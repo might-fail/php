@@ -43,7 +43,7 @@ try {
 } catch (Exception $e) {
     return response()->json(['error' => 'Unknown error.']);
 }
-````
+```
 
 ## Example 2
 
