@@ -11,4 +11,9 @@ class Fail extends Either
     ) {
         parent::__construct(null, $error);
     }
+
+    public static function from(Throwable $error): self
+    {
+        return new self($error);
+    }
 }

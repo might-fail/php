@@ -9,4 +9,9 @@ class Might extends Either
     ) {
         parent::__construct($result);
     }
+
+    public static function from(mixed $result): self
+    {
+        return new self($result);
+    }
 }
