@@ -1,0 +1,33 @@
+{
+  "name": "might-fail/might-fail",
+  "description": "A PHP implementation of the MightFail project",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "MightFail\\": "src/"
+    },
+    "files": [
+      "src/mightFail.php"
+    ]
+  },
+  "require": {
+    "php": ">=8.0"
+  },
+  "authors": [
+    {
+      "name": "Eiliya Abedianamiri",
+      "email": "eilia.abedian@yahoo.com"
+    }
+  ],
+  "require-dev": {
+    "pestphp/pest": "^3.5",
+    "pestphp/pest-plugin-watch": "^3.0",
+    "laravel/pint": "^1.18"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "license": "MIT"
+}
