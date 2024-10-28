@@ -15,7 +15,19 @@ class Either extends IteratorIterator implements ArrayAccess
         public mixed $result,
         public ?Throwable $error = null
     ) {
+        if ($result instanceof Throwable) {
+            throw new InvalidArgumentException('Result cannot be a Throwable.');
+        }
+        if ($result === null && $error === null) {
+            throw new InvalidArgumentException('Either result or error must be set.');
+        }
+
         parent::__construct(new ArrayIterator([$error, $result]));
+    }
+
+    public static function create(mixed $result, ?Throwable $error = null): self
+    {
+        return new self($result, $error);
     }
 
     public function getIterator(): Traversable
